@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dynamic Workflow Execution Summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workflow_name",
+    "workflow_version",
+    "workflow_hash",
+    "source",
+    "user",
+    "repo",
+    "started_at",
+    "ended_at",
+    "permission_mode",
+    "policy_decision",
+    "agents_spawned",
+    "tokens_estimated",
+    "tool_calls",
+    "tools_allowed",
+    "tools_denied",
+    "data_sources",
+    "sensitive_files_accessed",
+    "files_modified",
+    "commands_run",
+    "network_destinations",
+    "mcp_servers",
+    "scope_expansions_requested",
+    "scope_expansions_approved",
+    "persistent_rules_written",
+    "policy_violations"
+  ],
+  "properties": {
+    "workflow_name": {
+      "type": "string"
+    },
+    "workflow_version": {
+      "type": "string"
+    },
+    "workflow_hash": {
+      "type": "string",
+      "description": "Pinned workflow content hash, for example sha256:<hex>."
+    },
+    "source": {
+      "type": "string"
+    },
+    "user": {
+      "type": "string"
+    },
+    "repo": {
+      "type": "string"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "permission_mode": {
+      "type": "string",
+      "enum": [
+        "plan",
+        "default",
+        "dontAsk",
+        "acceptEdits",
+        "auto",
+        "bypassPermissions"
+      ]
+    },
+    "policy_decision": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "conditional",
+        "reject",
+        "terminated"
+      ]
+    },
+    "agents_spawned": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tokens_estimated": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tool_calls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shell",
+        "filesystem_read",
+        "filesystem_write",
+        "mcp",
+        "browser",
+        "network"
+      ],
+      "properties": {
+        "shell": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "filesystem_read": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "filesystem_write": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mcp": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "browser": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "network": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "tools_allowed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tools_denied": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data_sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public_web",
+        "repo",
+        "internal_docs",
+        "slack",
+        "jira",
+        "crm",
+        "customer_data"
+      ],
+      "properties": {
+        "public_web": {
+          "type": "boolean"
+        },
+        "repo": {
+          "type": "boolean"
+        },
+        "internal_docs": {
+          "type": "boolean"
+        },
+        "slack": {
+          "type": "boolean"
+        },
+        "jira": {
+          "type": "boolean"
+        },
+        "crm": {
+          "type": "boolean"
+        },
+        "customer_data": {
+          "type": "boolean"
+        }
+      }
+    },
+    "sensitive_files_accessed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files_modified": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "commands_run": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "network_destinations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mcp_servers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_expansions_requested": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "scope_expansions_approved": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "persistent_rules_written": {
+      "type": "boolean"
+    },
+    "policy_violations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

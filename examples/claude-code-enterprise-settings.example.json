@@ -1,0 +1,57 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(./**)",
+      "Grep(./**)",
+      "Glob(./**)",
+      "LS(./**)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run test:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm run test:*)",
+      "Bash(yarn test:*)",
+      "Bash(yarn run test:*)"
+    ],
+    "ask": [
+      "Edit(./**)",
+      "Write(./**)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(pnpm add:*)",
+      "Bash(yarn add:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./credentials/**)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)",
+      "Read(./**/*.p12)",
+      "Read(./**/*.pfx)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.azure/**)",
+      "Read(~/.gcloud/**)",
+      "Read(~/.kube/**)",
+      "Read(~/.npmrc)",
+      "Read(~/.pypirc)",
+      "Bash(env:*)",
+      "Bash(printenv:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(nc:*)",
+      "Bash(terraform apply:*)",
+      "Bash(kubectl:*)",
+      "Bash(helm upgrade:*)",
+      "Bash(npm publish:*)",
+      "Bash(rm -rf:*)",
+      "WebFetch",
+      "WebSearch"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+
+# Local/editor state
+.idea/
+.vscode/
+.cursor/
+.claude/
+*.log
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.*
+secrets.*
+*.kubeconfig
+
+# Local data and packaged artifacts
+*.db
+*.sqlite
+*.sqlite3
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+node_modules/
+dist/
+build/
+coverage/
