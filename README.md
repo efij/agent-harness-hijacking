@@ -1,6 +1,6 @@
 # Agent Harness Hijacking
 
-## OWASP-style security research for Claude Code Dynamic Workflows
+## Security research for Claude Code Dynamic Workflows
 
 **Agent Harness Hijacking** is a practical security research project focused on the risks created by dynamic multi-agent workflows in Claude Code and similar developer automation systems.
 
